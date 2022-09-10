@@ -13,14 +13,15 @@
     "noEmit": true,
     "paths": {
       "@/components/*": ["components/*"],
-      "@/styles/*": ["styles/*"],
+      "@/externals/*": ["externals/*"],
       "@/shared/*": ["shared/*"],
-      "@/store/*": ["store/*"]
+      "@/store/*": ["store/*"],
+      "@/styles/*": ["styles/*"]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "es5",
+    "target": "es5"
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
