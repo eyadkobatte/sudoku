@@ -168,9 +168,9 @@ export const library: Library = (function (root) {
           for (var i = 0; i < nr_givens - difficulty; ++i) {
             var target = parseInt(givens_idxs[i]);
             board =
-              board.substr(0, target) +
+              board.substring(0, target) +
               sudoku.BLANK_CHAR +
-              board.substr(target + 1);
+              board.substring(target + 1);
           }
         }
 

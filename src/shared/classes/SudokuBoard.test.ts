@@ -10,14 +10,15 @@ import {
   validSudokuBoard3,
   validSudokuBoard4,
 } from "../../../tests/fixtures/board-fixtures";
+import { EMPTY_GAME_BOARD } from "../constants/EmptyBoard";
 import { Difficulty, DifficultyMap } from "../enums/Difficulty";
-import { objectKeys } from "../utils/object-keys.util";
+import { objectKeys } from "../utils/object-helpers.util";
 import { SudokuBoard } from "./SudokuBoard";
 
 describe("SudokuBoard", () => {
   let sudokuBoard: SudokuBoard;
   beforeEach(() => {
-    sudokuBoard = new SudokuBoard();
+    sudokuBoard = new SudokuBoard(EMPTY_GAME_BOARD, EMPTY_GAME_BOARD);
   });
 
   it("should create a new class", () => {
@@ -25,38 +26,58 @@ describe("SudokuBoard", () => {
   });
 
   it("should generate a new board that is valid", () => {
-    const board = sudokuBoard.generate();
-    expect(sudokuBoard.validate(board)).toEqual(true);
+    sudokuBoard.generate();
+    expect(sudokuBoard.validate()).toEqual(true);
   });
 
   it("should have appropriate filled squares for each difficulty ", () => {
     objectKeys(DifficultyMap).forEach((key) => {
-      const board = sudokuBoard.generate(key);
-      expect(sudokuBoard.validate(board)).toEqual(true);
+      sudokuBoard.generate(key);
+      expect(sudokuBoard.validate()).toEqual(true);
       expect(
-        board.flat(1).filter((value) => value !== "0").length
+        sudokuBoard.board.flat(1).filter((value) => value !== "0").length
       ).toBeGreaterThanOrEqual(DifficultyMap[key]);
+      expect(
+        sudokuBoard.board.flat(1).filter((value) => value === "0").length
+      ).toBeLessThanOrEqual(81 - DifficultyMap[key]);
     });
   });
 
   it("should return true when validating valid boards", () => {
-    expect(sudokuBoard.validate(validSudokuBoard1)).toEqual(true);
-    expect(sudokuBoard.validate(validSudokuBoard2)).toEqual(true);
-    expect(sudokuBoard.validate(validSudokuBoard3)).toEqual(true);
-    expect(sudokuBoard.validate(validSudokuBoard4)).toEqual(true);
+    sudokuBoard = new SudokuBoard(validSudokuBoard1, validSudokuBoard1);
+    expect(sudokuBoard.validate()).toEqual(true);
+
+    sudokuBoard = new SudokuBoard(validSudokuBoard2, validSudokuBoard2);
+    expect(sudokuBoard.validate()).toEqual(true);
+
+    sudokuBoard = new SudokuBoard(validSudokuBoard3, validSudokuBoard3);
+    expect(sudokuBoard.validate()).toEqual(true);
+
+    sudokuBoard = new SudokuBoard(validSudokuBoard4, validSudokuBoard4);
+    expect(sudokuBoard.validate()).toEqual(true);
   });
 
   it("should return false when validating invalid boards", () => {
-    expect(sudokuBoard.validate(invalidSudokuBoard1)).toEqual(false);
-    expect(sudokuBoard.validate(invalidSudokuBoard2)).toEqual(false);
+    sudokuBoard = new SudokuBoard(invalidSudokuBoard1, invalidSudokuBoard1);
+    expect(sudokuBoard.validate()).toEqual(false);
+
+    sudokuBoard = new SudokuBoard(invalidSudokuBoard2, invalidSudokuBoard2);
+    expect(sudokuBoard.validate()).toEqual(false);
   });
 
   it("should solve incomplete sudoku boards", () => {
-    expect(sudokuBoard.solve(incompleteSudokuBoard1)).toEqual(
-      answerForIncompleteSudokuBoard1
+    sudokuBoard = new SudokuBoard(
+      incompleteSudokuBoard1,
+      incompleteSudokuBoard1
     );
-    expect(sudokuBoard.solve(incompleteSudokuBoard2)).toEqual(
-      answerForIncompleteSudokuBoard2
+    sudokuBoard.solve();
+    expect(sudokuBoard.board).toEqual(answerForIncompleteSudokuBoard1);
+
+    sudokuBoard = new SudokuBoard(
+      incompleteSudokuBoard2,
+      incompleteSudokuBoard2
     );
+    sudokuBoard.solve();
+    expect(sudokuBoard.board).toEqual(answerForIncompleteSudokuBoard2);
   });
 });

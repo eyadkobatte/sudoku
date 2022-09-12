@@ -11,14 +11,19 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "lodash": "^4.17.21",
+    "@storeon/localstorage": "1.4.0",
+    "lodash": "4.17.21",
     "next": "12.3.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "redux-devtools-extension": "^2.13.9",
+    "simple-keyboard": "3.4.152",
+    "storeon": "3.1.5",
+    "use-dark-mode": "2.3.1"
   },
   "devDependencies": {
-    "@types/jest": "^29.0.0",
-    "@types/lodash": "^4.14.184",
+    "@types/jest": "29.0.0",
+    "@types/lodash": "4.14.184",
     "@types/node": "18.7.16",
     "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
