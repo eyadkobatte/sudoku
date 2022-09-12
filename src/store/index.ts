@@ -115,12 +115,15 @@ export const store = createStoreon<State, Events>([
   gameStore,
   keyPressedStore,
   process.env.NODE_ENV !== "production" && storeonLogger,
-  // persistState(["board"], {
-  //   deserializer: (data) => {
-  //     const parsed = JSON.parse(data);
-  //     const sudokuBoard = new SudokuBoard(parsed.board.board);
-  //     console.log(sudokuBoard);
-  //     return { board: sudokuBoard };
-  //   },
-  // }),
+  persistState(["board"], {
+    deserializer: (data) => {
+      const parsed = JSON.parse(data);
+      const sudokuBoard = new SudokuBoard(
+        parsed.board.board,
+        parsed.board.initialBoard
+      );
+      console.log(sudokuBoard);
+      return { board: sudokuBoard };
+    },
+  }),
 ]);

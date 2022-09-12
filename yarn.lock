@@ -727,11 +727,6 @@
   resolved "https://registry.yarnpkg.com/@storeon/localstorage/-/localstorage-1.4.0.tgz#de1a76b2d86d2483e7be7c46664e4a4110e0a82c"
   integrity sha512-WHYs8AGEI7RrFkhToSj8UX/OqkCBRp09f9BJQB7Dggth075qI+XsoFB4g/Y0vIL+wuZgznyAmdGB+J7zUu2dmA==
 
-"@storeon/undo@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@storeon/undo/-/undo-1.1.0.tgz#9f32fd8201b640c11c7010aa4958698effdacd3c"
-  integrity sha512-wcSAjyp48CjI5tMZbsvvHzG2wSRB42QZIWBM03++K79UqgskynLwLirNVw0kERRdqGfmZS4XNsMVnt+4c9aQvw==
-
 "@swc/helpers@0.4.11":
   version "0.4.11"
   resolved "https://registry.yarnpkg.com/@swc/helpers/-/helpers-0.4.11.tgz#db23a376761b3d31c26502122f349a21b592c8de"
@@ -3408,7 +3403,7 @@ readdirp@~3.6.0:
   dependencies:
     picomatch "^2.2.1"
 
-redux-devtools-extension@^2.13.9:
+redux-devtools-extension@2.13.9:
   version "2.13.9"
   resolved "https://registry.yarnpkg.com/redux-devtools-extension/-/redux-devtools-extension-2.13.9.tgz#6b764e8028b507adcb75a1cae790f71e6be08ae7"
   integrity sha512-cNJ8Q/EtjhQaZ71c8I9+BPySIBVEKssbPpskBfsXqb8HJ002A3KRVHfeRzwRo6mGPqsm7XuHTqNSNeS1Khig0A==
