@@ -6,6 +6,7 @@
 }
 
 .link {
+  user-select: none;
   padding-inline: 12px;
   cursor: pointer;
   color: var(--color-100);
