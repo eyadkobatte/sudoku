@@ -18,7 +18,10 @@ const Board = () => {
     setMounted(true);
   }, []);
 
-  const selectedCellValue = board.board.at(row)?.at(column) ?? null;
+  let selectedCellValue: string | null = null;
+  if (row > -1 && column > -1) {
+    selectedCellValue = board.board.at(row)?.at(column) ?? null;
+  }
   return (
     <div className={styles.container}>
       {mounted &&
