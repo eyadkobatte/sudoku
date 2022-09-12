@@ -5,6 +5,9 @@ body.light-mode {
   --color: rgb(12, 12, 12);
   --color-100: rgb(100, 100, 100);
   --color-200: rgb(150, 150, 150);
+  --color-higlighted: rgb(88, 38, 173);
+  --brightness-filter-soft: 80%;
+  --brightness-filter-hard: 70%
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -15,5 +18,8 @@ body.dark-mode {
   --color: rgb(230, 230, 230);
   --color-100: rgb(150, 150, 150);
   --color-200: rgb(100, 100, 100);
+  --color-higlighted: rgb(180, 140, 255);
+  --brightness-filter-soft: 80%;
+  --brightness-filter-hard: 70%
   transition: background-color 0.3s ease, color 0.3s ease;
 }

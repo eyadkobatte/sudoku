@@ -18,6 +18,7 @@ const Board = () => {
     setMounted(true);
   }, []);
 
+  const selectedCellValue = board.board.at(row)?.at(column) ?? null;
   return (
     <div className={styles.container}>
       {mounted &&
@@ -28,7 +29,12 @@ const Board = () => {
               ${styles.cell}
               grid-${GRID_AREA.get(`${rowIndex}${columnIndex}`)}
               ${row === rowIndex && styles.selectedRow}
-              ${column === columnIndex && styles.selectedColumn}`}
+              ${column === columnIndex && styles.selectedColumn}
+              ${
+                selectedCellValue !== "0" &&
+                selectedCellValue === value &&
+                styles.selectedCellValue
+              }`}
               key={`${rowIndex}${columnIndex}`}
               data-row={rowIndex}
               data-column={columnIndex}

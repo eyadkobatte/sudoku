@@ -40,7 +40,7 @@ body {
 .grid-3,
 .grid-5,
 .grid-7 {
-  background-color: var(--background-200);
+  filter: brightness(var(--brightness-filter-hard));
 }
 
 .simple-keyboard.custom-theme {

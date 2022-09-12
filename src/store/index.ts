@@ -122,7 +122,6 @@ export const store = createStoreon<State, Events>([
         parsed.board.board,
         parsed.board.initialBoard
       );
-      console.log(sudokuBoard);
       return { board: sudokuBoard };
     },
   }),
