@@ -1,10 +1,13 @@
 .container {
-  --min-cell-size: 30px;
-  @media screen and (min-width: 500px) {
+  --min-cell-size: 36px;
+  @media screen and (min-width: 420px) {
+    --min-cell-size: 40px;
+  }
+  @media screen and (min-width: 480px) {
     --min-cell-size: 50px;
   }
-  @media screen and (min-width: 1000px) {
-    --min-cell-size: 70px;
+  @media screen and (min-width: 768px) {
+    --min-cell-size: 75px;
   }
   display: grid;
   grid-template-columns: repeat(9, minmax(var(--min-cell-size), 1fr));
@@ -21,7 +24,7 @@
     "7 7 7 8 8 8 9 9 9";
   place-items: center;
   place-content: center;
-  margin-inline: 12px;
+  // margin-inline: 12px;
 }
 
 .cell {
@@ -37,10 +40,6 @@
   line-height: var(--min-cell-size);
 
   color: var(--color);
-
-  // &:focus {
-  //   filter: brightness(70%);
-  // }
 }
 
 .selectedRow,
