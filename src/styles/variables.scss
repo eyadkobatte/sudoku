@@ -4,7 +4,9 @@ body.light-mode {
   --background-200: rgb(200, 200, 200);
   --color: rgb(12, 12, 12);
   --color-100: rgb(100, 100, 100);
+  --color-100-transparency: rgba(100, 100, 100, 0.12);
   --color-200: rgb(150, 150, 150);
+  --color-200-transparency: rgb(150, 150, 150, 0.12);
   --color-higlighted: rgb(88, 38, 173);
   --brightness-filter-soft: 80%;
   --brightness-filter-hard: 70%
@@ -17,7 +19,9 @@ body.dark-mode {
   --background-200: rgb(40, 40, 40);
   --color: rgb(230, 230, 230);
   --color-100: rgb(150, 150, 150);
+  --color-100-transparency: rgba(150, 150, 150, 0.12);
   --color-200: rgb(100, 100, 100);
+  --color-200-transparency: rgb(100, 100, 100, 0.12);
   --color-higlighted: rgb(180, 140, 255);
   --brightness-filter-soft: 80%;
   --brightness-filter-hard: 70%
