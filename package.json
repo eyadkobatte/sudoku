@@ -11,6 +11,7 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
+    "@panelbear/panelbear-nextjs": "1.0.4",
     "@storeon/localstorage": "1.4.0",
     "lodash": "4.17.21",
     "next": "12.3.0",
