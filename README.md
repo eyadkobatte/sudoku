@@ -1,4 +1,4 @@
-[Play here](sudoku.eyad.dev)
+[Play here](https://sudoku.eyad.dev)
 
 # Sudoku
 
